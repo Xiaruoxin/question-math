@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第三题</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            font-family: '方正喵呜简体';
+        }
+
+        .quiz-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            background: #f7f7f7;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .question h2 {
+            color: #333;
+            font-family: '方正喵呜简体';
+        }
+
+        .options {
+            margin-top: 10px;
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .submit-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #dff0d8;
+            color: #3c763d;
+            border: 1px solid #d6e9c6;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .tworesult {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #dff0d8;
+            color: #3c763d;
+            border: 1px solid #d6e9c6;
+            border-radius: 5px;
+            display: none;
+        } */
+
+        .threeresult {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #dff0d8;
+            color: #3c763d;
+            border: 1px solid #d6e9c6;
+            border-radius: 5px;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .question {
+                display: flex;
+                flex-direction: column;
+                /* justify-content: center; */
+                align-items: center;
+            }
+
+            .quiz-container {
+                padding: 10px;
+            }
+
+            .submit-button {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="quiz-container">
+        <div class="question">
+            <h2>【单选题】1.1 × 9.8</h2>
+            <div class="options">
+                <label for="optionA"><input id="optionA" type="radio" name="answer" value="A"> A. 1078</label><br>
+                <label for="optionB"><input id="optionB" type="radio" name="answer" value="B"> B. 107.8</label><br>
+                <label for="optionC"><input id="optionC" type="radio" name="answer" value="C"> C. 10.78</label>
+            </div>
+            <button class="submit-button" onclick="submitAnswer()">提交</button>
+        </div>
+        <div class="result"></div>
+    </div> 
+    <div class="quiz-container">
+        <div class="question">
+            <h2>【单选题】1.04 × 9.7</h2>
+            <div class="options">
+                <label for="optionA"><input id="optionA" type="radio" name="twoanswer" value="A"> A. 10.088</label><br>
+                <label for="optionB"><input id="optionB" type="radio" name="twoanswer" value="B"> B. 10.88</label><br>
+                <label for="optionC"><input id="optionC" type="radio" name="twoanswer" value="C"> C. 13.58</label>
+            </div>
+            <button class="submit-button" onclick="twosubmitAnswer()">提交</button>
+        </div>
+        <div class="tworesult"></div>
+    </div>-->
+     <div class="quiz-container">
+        <div class="question">
+            <h2>【单选题】0.112 × 0.03</h2>
+            <div class="options">
+                <label for="optionA"><input id="optionA" type="radio" name="threeanswer" value="A"> A. 0.336</label><br>
+                <label for="optionB"><input id="optionB" type="radio" name="threeanswer" value="B"> B.
+                    0.0336</label><br>
+                <label for="optionC"><input id="optionC" type="radio" name="threeanswer" value="C"> C. 0.00336</label>
+            </div>
+            <button class="submit-button" onclick="threesubmitAnswer()">提交</button>
+        </div>
+        <div class="threeresult"></div>
+    </div> 
+    <!-- <script src="index.js"></script> -->
+</body>
+
+<script>
+    // function submitAnswer() {
+    //     let answer = document.querySelector('input[name="answer"]:checked').value;
+    //     let resultDiv = document.querySelector('.result');
+    //     let correctAnswer = 'C'; // 根据题目设置正确答案
+
+    //     if (answer === correctAnswer) {
+    //         resultDiv.textContent = '回答正确，小朋友很棒';
+    //         resultDiv.style.display = 'block';
+    //     } else {
+    //         resultDiv.textContent = '不对呀，小朋友再仔细想想';
+    //         resultDiv.style.display = 'block';
+    //     }
+
+    // }
+    // function twosubmitAnswer() {
+    //     let answer = document.querySelector('input[name="twoanswer"]:checked').value;
+    //     let resultDiv = document.querySelector('.tworesult');
+    //     let twocorrectAnswer = 'A';
+
+    //     if (answer === twocorrectAnswer) {
+    //         resultDiv.textContent = '回答正确，小朋友很棒';
+    //         resultDiv.style.display = 'block';
+    //     } else {
+    //         resultDiv.textContent = '不对呀，小朋友再仔细想想';
+    //         resultDiv.style.display = 'block';
+    //     }
+    // }
+    function threesubmitAnswer() {
+        let answer = document.querySelector('input[name="threeanswer"]:checked').value;
+        let resultDiv = document.querySelector('.threeresult');
+        let threecorrectAnswer = 'C';
+
+        if (answer === threecorrectAnswer) {
+            resultDiv.textContent = '回答正确，小朋友很棒';
+            resultDiv.style.display = 'block';
+        } else {
+            resultDiv.textContent = '不对呀，小朋友再仔细想想';
+            resultDiv.style.display = 'block';
+        }
+    }
+</script>
+
+</html>
